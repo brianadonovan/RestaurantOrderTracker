@@ -1,0 +1,51 @@
+<h4 align="center">
+  Select the spice level and quantity below to place an order! All orders come with rice and butter naan.
+
+</h4>
+
+<div *ngIf="menuItems">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f.value)" class="ui form">
+    <div class="container" align="center">
+      <table class="table table-bordered">
+        <tbody>
+
+        <tr *ngFor="let item of menuItems">
+          <td>
+              <div style="text-align:center" class="row">
+                <div class="col-md-4">{{item.foodItem}}</div></div>
+          </td>
+
+          <td>
+            <div class="col-md-3" style="text-align:center" >
+              <p>Spice Level </p>
+              <select id="spice-level" required name="s.{{item.foodItem}}" class="form-control form-control-lg" ngModel>
+                <option value ="" disabled selected> Please Select...</option>
+                <option value="mild">Mild</option>
+                <option value="medium">Medium</option>
+                <option value="hot">Hot</option>
+                <option value="very-hot">Very Hot</option>
+                <option value="extreme-heat">Extreme Heat</option></select>
+            </div>
+          </td>
+
+          <td>
+            <div class="col-md-3" style="text-align:center"> Quantity
+            <div class="input-group">
+              <input type="text" name="q.{{item.foodItem}}" class="form-control input-number form-group" value="0" min="1" max="10" ngModel>
+
+            </div>
+          </div>
+          </td>
+          <td>
+            <div style="text-align:center" class="row">
+              <div class="col-md-2">${{item.price}}</div></div>
+          </td>
+
+        </tr>
+      </tbody>
+      </table>
+    </div>
+      <div style="text-align:center">
+        <input type="submit" value="Submit" id="submit"></div>
+  </form>
+</div>

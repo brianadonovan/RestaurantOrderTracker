@@ -1,0 +1,5 @@
+.table, th, td {
+  line-height: 1;
+  padding: .4rem;
+  background-color: rgb(242, 230, 217);
+}

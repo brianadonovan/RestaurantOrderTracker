@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
+h1, h2, h3, .navbar-brand {
+  font-family: 'Pacifico', cursive;
+  background-color: rgb(179, 217, 255);
+}
+
+
